@@ -12,10 +12,10 @@ let sim;
 let apb3_master;
 
 let write = (addr, data) => {
-    apb3_master.dTxnArray.push({addr: addr, wdata: data, type: 'WRITE'});
+    apb3_master.dTxnArray.push({addr: addr << 2, wdata: data, type: 'WRITE'});
 };
 let read = (addr) => {
-    apb3_master.dTxnArray.push({addr: addr, type: 'READ'});
+    apb3_master.dTxnArray.push({addr: addr << 2, type: 'READ'});
 };
 
 describe('Basic Group', () => {
@@ -104,6 +104,14 @@ describe('Basic Group', () => {
 	read(1);
 	sim.run(1000);
 	
+    });
+
+    it('APB INVALID ADDR READ', function() {
+	this.timeout(10000);
+	setup('apb_read_invalid');
+	read(3);
+	read(0xFF);
+	sim.run(1000);
     });
 });
 

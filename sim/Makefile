@@ -103,9 +103,12 @@ verilate:
 	$(VERILATOR) $(VERILATOR_FLAGS) -f input.vc $(TOP)
 
 
+show:
+	gtkwave logs/apb_read_write.fst&
+
 ######################################################################
 # Other targets
-
+ 
 show-config:
 	$(VERILATOR) -V
 

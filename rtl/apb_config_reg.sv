@@ -4,11 +4,14 @@ module apb_config_reg
    input wire        PCLK,
    input wire        PSEL,
    input wire        PENABLE,
+   // PADDR bits 1:0 unused b/c of byte addressing
+   /* verilator lint_off UNUSED */
    input wire [31:0] PADDR,
+   /* verilator lint_on UNUSED */
    input wire        PWRITE,
    input wire [31:0] PWDATA,
    output reg [31:0] PRDATA,
-   output wire        PREADY,
+   output wire       PREADY,
    output reg        PSLVERR,
 
    output reg [31:0] config_reg0,
@@ -21,7 +24,7 @@ module apb_config_reg
 
    //READ
    always @(posedge PCLK)
-     case(PADDR) 
+     case(PADDR[31:2]) 
         0: PRDATA <= config_reg0;
         1: PRDATA <= config_reg1;
         default: PRDATA <= 32'hDEADBEEF;
@@ -52,7 +55,7 @@ module apb_config_reg
      else begin
         PSLVERR <= 1'b0;
         if(PSEL & PENABLE & PWRITE)
-          case(PADDR) 
+          case(PADDR[31:2]) 
             0: config_reg0 <= PWDATA;
             1: config_reg1 <= PWDATA;
           endcase // case (PADDR)

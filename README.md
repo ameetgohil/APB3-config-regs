@@ -1,5 +1,5 @@
 # APB3-config-regs
-Implements two config registers with APB3 interface. Verification simulation done verilator using signalflip-js
+Implements two config registers with APB3 interface. Verification testbench done in verilator using signalflip-js
 
 ## Dependencies
 - [Verilator (version 4.0 or above)](https://www.veripool.org/projects/verilator/wiki/Installing)

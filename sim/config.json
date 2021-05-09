@@ -1,7 +1,7 @@
 {
     "dut_file": "../rtl/apb_config_reg.sv",  
     "dut_name": "apb_config_reg",
-    "waveform_format": "fst",
+    "waveform_format": "vcd",
 
     "probe": [ "sig1", "sig2", "sig3"]
 

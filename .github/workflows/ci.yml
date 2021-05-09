@@ -30,4 +30,5 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    - run: apt-get update && apt-get install zlib1g zlib1g-dev
     - run: cd sim && npm i && make

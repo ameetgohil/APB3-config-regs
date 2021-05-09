@@ -1,9 +1,9 @@
 const dut = require('../build/Release/dut.node');
 const {Sim, SimUtils, RisingEdge, RisingEdges, FallingEdge, FallingEdges, Edge, Edges, Interfaces} = require('signalflip-js');
 const { Clock } = SimUtils;
-const {Elastic} = Interfaces;
+const {Elastic, APB3} = Interfaces;
 const _ = require('lodash');
-const APB3 = require('../APB3/APB3');
+//const APB3 = require('../APB3/APB3');
 
 const jsc = require('jsverify');
 const assert = require('assert');

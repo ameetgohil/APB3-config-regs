@@ -1,3 +1,5 @@
+[![Build Status](https://github.com/ameetgohil/APB3-config-regs/actions/workflows/ci.yml/badge.svg)](https://github.com/ameetgohil/APB3-config-regs/actions/workflows/ci.yml)
+
 # APB3-config-regs
 Implements two config registers with APB3 interface. Verification testbench done in verilator using signalflip-js
 

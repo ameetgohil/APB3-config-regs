@@ -22,7 +22,7 @@ gtkwave logs/apb_read.fst
 gtkwave logs/apb_read_write_simple.fst
 ```
 
-### Simulation References
+### Simulation Reference
 - [signalflip-js](https://github.com/ameetgohil/signalflip-js)
 - [Counter example](https://github.com/ameetgohil/basic-signalflip-example)
 - [Elastic Valid-Ready example](https://github.com/ameetgohil/elastic-signalflip-example)
